@@ -103,38 +103,51 @@ export const Projects: React.FC = () => {
             </p>
           </div>
 
-          {/* Interactive filter tabs */}
-          <div className="flex items-center gap-1.5 p-1 bg-white/70 backdrop-blur-xs rounded-xl border border-black/10 self-start md:self-auto">
-            <button
-              onClick={() => setActiveTab('all')}
-              className={`px-4 py-1.5 rounded-lg text-xs font-body font-medium transition-all cursor-pointer ${
-                activeTab === 'all'
-                  ? 'bg-[#050505] text-white shadow-xs'
-                  : 'text-black/65 hover:text-black'
-              }`}
+          {/* Interactive filter tabs & creative portfolio link */}
+          <div className="flex flex-wrap items-center gap-2.5 self-start md:self-auto">
+            <div className="flex items-center gap-1.5 p-1 bg-white/70 backdrop-blur-xs rounded-xl border border-black/10">
+              <button
+                onClick={() => setActiveTab('all')}
+                className={`px-4 py-1.5 rounded-lg text-xs font-body font-medium transition-all cursor-pointer ${
+                  activeTab === 'all'
+                    ? 'bg-[#050505] text-white shadow-xs'
+                    : 'text-black/65 hover:text-black'
+                }`}
+              >
+                All Works
+              </button>
+              <button
+                onClick={() => setActiveTab('ai')}
+                className={`px-4 py-1.5 rounded-lg text-xs font-body font-medium transition-all cursor-pointer ${
+                  activeTab === 'ai'
+                    ? 'bg-[#050505] text-white shadow-xs'
+                    : 'text-black/65 hover:text-black'
+                }`}
+              >
+                AI &amp; Automation
+              </button>
+              <button
+                onClick={() => setActiveTab('fullstack')}
+                className={`px-4 py-1.5 rounded-lg text-xs font-body font-medium transition-all cursor-pointer ${
+                  activeTab === 'fullstack'
+                    ? 'bg-[#050505] text-white shadow-xs'
+                    : 'text-black/65 hover:text-black'
+                }`}
+              >
+                Full Stack &amp; Web
+              </button>
+            </div>
+
+            <a
+              href="https://pranav-cinematic-portfolio-rust.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-body font-medium bg-white/60 hover:bg-white text-black/75 hover:text-black border border-black/10 transition-all cursor-pointer shadow-2xs active:scale-95"
+              title="Explore cinematic creative portfolio"
             >
-              All Works
-            </button>
-            <button
-              onClick={() => setActiveTab('ai')}
-              className={`px-4 py-1.5 rounded-lg text-xs font-body font-medium transition-all cursor-pointer ${
-                activeTab === 'ai'
-                  ? 'bg-[#050505] text-white shadow-xs'
-                  : 'text-black/65 hover:text-black'
-              }`}
-            >
-              AI &amp; Automation
-            </button>
-            <button
-              onClick={() => setActiveTab('fullstack')}
-              className={`px-4 py-1.5 rounded-lg text-xs font-body font-medium transition-all cursor-pointer ${
-                activeTab === 'fullstack'
-                  ? 'bg-[#050505] text-white shadow-xs'
-                  : 'text-black/65 hover:text-black'
-              }`}
-            >
-              Full Stack &amp; Web
-            </button>
+              <span>Creative Showcase</span>
+              <span className="text-[11px]">↗</span>
+            </a>
           </div>
         </div>
 
@@ -394,6 +407,40 @@ export const Projects: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Cinematic Creative Portfolio Callout Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.35 }}
+          className="mt-14 sm:mt-16 pt-8 border-t border-black/[0.08] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 bg-white/70 backdrop-blur-xs p-7 sm:p-9 rounded-3xl border border-black/[0.08] shadow-xs hover:border-black/20 transition-all duration-300"
+        >
+          <div className="max-w-xl">
+            <div className="text-[11px] font-mono uppercase tracking-widest text-black/50 mb-1.5 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span>CREATIVE &amp; CINEMATIC EXPERIENCES</span>
+            </div>
+            <h3 className="font-heading text-xl sm:text-2xl text-[#050505]">
+              Looking for my visual &amp; motion design work?
+            </h3>
+            <p className="text-[14px] text-black/65 font-body mt-1.5 leading-relaxed">
+              Experience the cinematic dimension of my portfolio—featuring interactive 3D spatial scenes, motion graphics, and avant-garde creative technology experiments.
+            </p>
+          </div>
+
+          <a
+            href="https://pranav-cinematic-portfolio-rust.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group shrink-0 bg-[#050505] text-white hover:bg-black/85 px-6 sm:px-7 py-3.5 rounded-full text-xs sm:text-sm font-medium font-body transition-all duration-200 shadow-xs hover:shadow-md active:scale-95 inline-flex items-center gap-2 cursor-pointer"
+          >
+            <span>Explore My Creative Portfolio</span>
+            <span className="inline-block transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200 text-xs">
+              ↗
+            </span>
+          </a>
+        </motion.div>
       </div>
 
       {/* FlowPilot Decision Engine Simulator Modal */}

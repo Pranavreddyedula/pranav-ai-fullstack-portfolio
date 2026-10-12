@@ -25,14 +25,27 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Back to top button */}
-        <button
-          onClick={scrollToTop}
-          className="text-xs sm:text-sm font-mono text-black/75 hover:text-black transition-colors cursor-pointer flex items-center gap-1.5 underline underline-offset-4"
-        >
-          <span>Back to top</span>
-          <span>↑</span>
-        </button>
+        {/* Right side navigation actions */}
+        <div className="flex flex-wrap items-center gap-6">
+          <a
+            href="https://pranav-cinematic-portfolio-rust.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs sm:text-sm font-mono text-black/70 hover:text-black transition-colors cursor-pointer flex items-center gap-1 underline underline-offset-4"
+          >
+            <span>Creative Portfolio</span>
+            <span>↗</span>
+          </a>
+
+          {/* Back to top button */}
+          <button
+            onClick={scrollToTop}
+            className="text-xs sm:text-sm font-mono text-black/75 hover:text-black transition-colors cursor-pointer flex items-center gap-1.5 underline underline-offset-4"
+          >
+            <span>Back to top</span>
+            <span>↑</span>
+          </button>
+        </div>
       </div>
     </footer>
   );
